@@ -18,7 +18,7 @@ Puedes instalar esta librería directamente desde PyPI (una vez publicada):
 pip install sap-service-layer
 ```
 ---
-## 🚀 Ejemplo de uso
+## Ejemplo de uso
 
 ```python
 from sap_service_layer import SAPServiceLayerClient
