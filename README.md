@@ -15,15 +15,15 @@ Cliente Python ligero para conectarse al **Service Layer de SAP Business One** u
 Puedes instalar esta librería directamente desde PyPI (una vez publicada):
 
 ```bash
-pip install sap-service-layer
+pip install SAPB1SL
 ```
 ---
 ## Ejemplo de uso
 
 ```python
-from sap_service_layer import SAPServiceLayerClient
+from SAPB1SL import SAPB1SL
 
-client = SAPServiceLayerClient(
+client = SAPB1SL(
     base_url="https://mi-servidor-sap:50000/b1s/v1",
     company_db="SBODemoCL",
     username="manager",
