@@ -1,7 +1,13 @@
+##############################################
+#                   BLPG                     #   
+##############################################
+
 import requests
 from .exceptions import AuthenticationError, SAPRequestError
+import urllib3
 
-class SAPServiceLayerClient:
+urllib3.disable_warnings()
+class SAPB1SL:
     def __init__(self, base_url, username, password, company_db, max_retries=1):
         self.base_url = base_url.rstrip('/')
         self.username = username
@@ -22,7 +28,7 @@ class SAPServiceLayerClient:
             "Password": self.password,
             "CompanyDB": self.company_db
         }
-        response = self.session.post(url, json=data)
+        response = self.session.post(url, json=data, verify=False)
         if response.status_code != 200:
             raise AuthenticationError(f"Login failed: {response.text}")
 
@@ -38,7 +44,7 @@ class SAPServiceLayerClient:
         attempt = 0
 
         while attempt <= self.max_retries:
-            response = self.session.request(method, url, **kwargs)
+            response = self.session.request(method, url, **kwargs, verify=False)
 
             if response.status_code == 401 or "Session" in response.text:
                 attempt += 1
