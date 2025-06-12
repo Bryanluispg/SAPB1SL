@@ -1,4 +1,4 @@
-![SAPB1S](Logo.png)
+![SAPB1S](LogoPNG.png)
 
 #  SAPB1SL
  
