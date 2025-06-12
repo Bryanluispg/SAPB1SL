@@ -1,7 +1,7 @@
 ![SAPB1S](screenshot.png)
 
 #  SAPB1SL
-
+ 
 Cliente Python ligero para conectarse al **Service Layer de SAP Business One** utilizando `requests`. Esta librería facilita la autenticación, el manejo de sesiones, la reconexión automática y la ejecución de peticiones HTTP de forma robusta, sencilla y limpia.
 
 ##  Características

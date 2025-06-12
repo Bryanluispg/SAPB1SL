@@ -9,7 +9,7 @@ setup(
     version="1.3.0",
     author="Bryan Pineda Gonzalez",
     author_email="dev@bryanlpinedag.com",
-    description="Cliente Python para el Service Layer de SAP Business One usando requests",
+    description="Cliente Python para el Service Layer de SAP Business One usando requests.",
     long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/Bryanluispg/SAPB1SL",  
