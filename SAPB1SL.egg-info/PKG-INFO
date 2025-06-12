@@ -1,0 +1,80 @@
+Metadata-Version: 2.4
+Name: SAPB1SL
+Version: 1.2.0
+Summary: Cliente Python para el Service Layer de SAP Business One usando requests
+Home-page: https://github.com/Bryanluispg/sap_service_layer_blpg
+Author: Bryan Pineda Gonzalez
+Author-email: dev@bryanlpinedag.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+#  sap_service_layer
+
+Cliente Python ligero para conectarse al **Service Layer de SAP Business One** utilizando `requests`. Esta librería facilita la autenticación, el manejo de sesiones, la reconexión automática y la ejecución de peticiones HTTP de forma robusta, sencilla y limpia.
+
+##  Características
+
+-  Autenticación al Service Layer de SAP B1
+-  Reconexión automática cuando la sesión expira
+-  Métodos simplificados: `get()`, `post()`, `patch()`, `delete()`
+-  Código limpio y mantenible, ideal para entornos productivos
+-  Útil para integraciones backend, automatizaciones o servicios web
+
+##  Instalación
+
+Puedes instalar esta librería directamente desde PyPI (una vez publicada):
+
+```bash
+pip install sap-service-layer
+```
+---
+## Ejemplo de uso
+
+```python
+from SAPB1SL import SAPB1SL
+
+client = SAPB1SL(
+    base_url="https://mi-servidor-sap:50000/b1s/v1",
+    company_db="SBODemoCL",
+    username="manager",
+    password="1234"
+)
+
+response = client.get("BusinessPartners?$top=5")
+
+if response.status_code == 200:
+    data = response.json()
+    print(data)
+else:
+    print("Error:", response.status_code)
+```
+---
+## Licencia
+Este proyecto está licenciado bajo los términos de la licencia MIT. Ver archivo LICENSE para más detalles.
+
+---
+
+## Autor
+Bryan Luis Pineda
+Linkedin: https://www.linkedin.com/in/blpg/
+
+---
+
+## Contribuciones
+Este proyecto es de código abierto, pero cualquier cambio debe ser aprobado previamente por el autor. Si deseas colaborar, abre un issue primero o contáctame directamente por LinkedIn.
